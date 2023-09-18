@@ -5,7 +5,7 @@ date: "2023-09-14"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(moderndive)
@@ -15,7 +15,7 @@ data("early_january_weather")
 # Problem 1
 
 ## Part 1
-Inside the dataset `early_january_weather`, there are `r ncol(early_january_weather)` variables including "`r colnames(early_january_weather)`" with `r nrow(early_january_weather)` observations. Among all the variables, we focusing on the `temperature` variable inside the dataset. We noticed that the mean temperature in this data set is `r mean(early_january_weather$temp)` degrees Fahrenheit.
+Inside the dataset `early_january_weather`, there are `r ncol(early_january_weather)` variables including "`r colnames(early_january_weather)`" with `r nrow(early_january_weather)` observations. Among all the variables, I noticed that the variable "wind_gust" have many values of "NA", this might due to loss of the data in most of the time and we need to omit those NA values when we want to find a pattern regarding this variable. Moving on, we noticed that the mean temperature in this data set is `r mean(pull(early_january_weather, temp))` degrees Fahrenheit using variables `temp` to get the answer.
 
 ## Part 2
 Next we are going to make a scatter plot
